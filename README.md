@@ -1,6 +1,6 @@
-# RollerSpeed 🛼
+# RollerSpeed 🛹
 
-Aplicación web monolítica desarrollada para la escuela de patinaje RollerSpeed como producto mínimo viable (MVP), utilizando Spring Boot, Spring MVC y PostgreSQL.
+Aplicación web monolítica desarrollada para la escuela de patinaje **RollerSpeed** como producto mínimo viable (MVP), utilizando Spring Boot, Spring MVC y PostgreSQL.
 
 ## 🎯 Objetivo
 
@@ -33,25 +33,25 @@ Las opciones del menú utilizan navegación interna para dirigir al usuario haci
 
 ## 🏗️ Arquitectura MVC
 
-La aplicación utiliza el patrón MVC (Model-View-Controller) mediante Spring Boot y Spring MVC.
+La aplicación utiliza el patrón **MVC (Model-View-Controller)** mediante Spring Boot y Spring MVC.
 
 ### Controller
 
 El controlador se encuentra en:
 
-src/main/java/com/iudigital/rollerSpeed/controllers/indexController.java
+`src/main/java/com/iudigital/rollerSpeed/controllers/indexController.java`
 
 Este componente gestiona las solicitudes HTTP y dirige al usuario hacia la vista principal de la aplicación.
 
 La ruta configurada para acceder al controlador es:
 
-/home/index
+`/home/index`
 
 ### View
 
 La vista principal se encuentra en:
 
-src/main/resources/templates/index.html
+`src/main/resources/templates/index.html`
 
 En esta vista se presenta la interfaz del producto mínimo viable, incluyendo el menú de navegación y las secciones informativas de RollerSpeed.
 
@@ -93,16 +93,17 @@ CasodeestudioFrameworksMVC/
 ├── mvnw.cmd
 ├── pom.xml
 └── README.md
+```
 
 ## ⚙️ Requisitos
 
 Para ejecutar el proyecto se requiere contar con:
 
-- JDK 17 o superior
-- Maven
-- PostgreSQL
-- Visual Studio Code u otro IDE compatible
-- Git
+- **JDK 17 o superior**
+- **Maven**
+- **PostgreSQL**
+- **Visual Studio Code** u otro IDE compatible
+- **Git**
 
 ## 🗄️ Base de datos
 
@@ -110,11 +111,11 @@ La aplicación utiliza PostgreSQL como sistema gestor de base de datos.
 
 La configuración de conexión se encuentra en:
 
-src/main/resources/application.properties
+`src/main/resources/application.properties`
 
 La aplicación está configurada para trabajar con una base de datos local denominada:
 
-rollerSpeed
+**rollerSpeed**
 
 Los datos de conexión pueden variar dependiendo de la configuración local de cada integrante del equipo.
 
@@ -122,11 +123,13 @@ Los datos de conexión pueden variar dependiendo de la configuración local de c
 
 Para trabajar con la aplicación, cada integrante debe configurar su entorno local de acuerdo con la instalación de PostgreSQL disponible en su equipo.
 
-La URL de conexión utilizada por la aplicación puede configurarse mediante la variable de entorno DB_URL.
+La URL de conexión utilizada por la aplicación puede configurarse mediante la variable de entorno `DB_URL`.
 
 Ejemplo:
 
+```text
 jdbc:postgresql://localhost:5432/rollerSpeed
+```
 
 El puerto puede variar dependiendo de la configuración local de PostgreSQL.
 
@@ -136,11 +139,15 @@ No se deben almacenar contraseñas ni otras credenciales sensibles en el reposit
 
 Desde la raíz del proyecto ejecutar:
 
+```bash
 ./mvnw spring-boot:run
+```
 
 También se puede utilizar Maven instalado localmente:
 
+```bash
 mvn spring-boot:run
+```
 
 Una vez iniciada correctamente la aplicación, Spring Boot levanta el servidor web en el puerto configurado.
 
@@ -148,33 +155,35 @@ Una vez iniciada correctamente la aplicación, Spring Boot levanta el servidor w
 
 Por configuración predeterminada, la aplicación puede visualizarse en:
 
-http://localhost:8080
+`http://localhost:8080`
 
 También es posible acceder directamente a la ruta del controlador:
 
-http://localhost:8080/home/index
+`http://localhost:8080/home/index`
 
 ## 🧪 Pruebas
 
 El proyecto incluye una prueba de contexto de Spring Boot ubicada en:
 
-src/test/java/com/iudigital/rollerSpeed/RollerSpeedApplicationTests.java
+`src/test/java/com/iudigital/rollerSpeed/RollerSpeedApplicationTests.java`
 
 Esta prueba permite verificar que el contexto de la aplicación Spring Boot pueda iniciarse correctamente.
 
 Para ejecutar las pruebas:
 
+```bash
 ./mvnw test
+```
 
 ## 📦 Dependencias principales
 
 El proyecto utiliza las siguientes dependencias principales:
 
-- spring-boot-starter-data-jpa — integración con JPA y persistencia de datos.
-- spring-boot-starter-thymeleaf — manejo de vistas.
-- spring-boot-starter-webmvc — desarrollo web utilizando Spring MVC.
-- spring-boot-devtools — herramientas para facilitar el desarrollo y la recarga automática.
-- postgresql — controlador JDBC para la conexión con PostgreSQL.
+- **spring-boot-starter-data-jpa** — integración con JPA y persistencia de datos.
+- **spring-boot-starter-thymeleaf** — manejo de vistas.
+- **spring-boot-starter-webmvc** — desarrollo web utilizando Spring MVC.
+- **spring-boot-devtools** — herramientas para facilitar el desarrollo y la recarga automática.
+- **postgresql** — controlador JDBC para la conexión con PostgreSQL.
 
 ## 🔄 Control de versiones
 
@@ -199,7 +208,7 @@ Proyecto desarrollado de manera colaborativa como parte de la asignatura Framewo
 
 ## 📚 Contexto académico
 
-Este proyecto corresponde a la evidencia de aprendizaje EA1 - Instalación de herramientas y configuración del entorno de desarrollo, cuyo propósito es aplicar diferentes herramientas para instalar y configurar un entorno destinado al desarrollo de una aplicación web.
+Este proyecto corresponde a la evidencia de aprendizaje **EA1 - Instalación de herramientas y configuración del entorno de desarrollo**, cuyo propósito es aplicar diferentes herramientas para instalar y configurar un entorno destinado al desarrollo de una aplicación web.
 
 El producto desarrollado corresponde al caso de estudio de la escuela de patinaje RollerSpeed.
 
