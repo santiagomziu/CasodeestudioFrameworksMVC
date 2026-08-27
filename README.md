@@ -61,8 +61,9 @@ El proyecto cuenta con las dependencias necesarias para trabajar con Spring Data
 
 ## 📂 Estructura del proyecto
 
+```text
 CasodeestudioFrameworksMVC/
-
+│
 ├── .mvn/
 │   └── wrapper/
 │
@@ -76,6 +77,8 @@ CasodeestudioFrameworksMVC/
 │   │   │
 │   │   └── resources/
 │   │       ├── application.properties
+│   │       ├── static/
+│   │       │   └── patineta.png
 │   │       └── templates/
 │   │           └── index.html
 │   │
