@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>RollerSpeed | Escuela de Patinaje</title>
+
+    <link rel="icon" type="image/png" href="/patineta.png">
+
     <style>
         /* CSS Reset & Variables */
         * {
@@ -19,8 +24,8 @@
         }
 
         :root {
-            --primary: #00bcd4;    /* Cyan veloz */
-            --secondary: #ff4081;  /* Rosa neón energía */
+            --primary: #00bcd4;
+            --secondary: #ff4081;
             --dark: #1a1a1a;
             --light: #f8f9fa;
         }
@@ -43,19 +48,32 @@
             align-items: center;
             padding: 1rem 2rem;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .brand {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
             font-size: 1.5rem;
             font-weight: 800;
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         .brand span {
             color: var(--primary);
+        }
+
+        .brand-icon {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+            display: block;
+            flex-shrink: 0;
         }
 
         .nav-links {
@@ -79,8 +97,11 @@
         /* --- Hero Header --- */
         .hero {
             height: 70vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-            url('https://images.unsplash.com/photo-1547447134-cd3f5c716030?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1547447134-cd3f5c716030?q=80&w=1200&auto=format&fit=crop')
+                center/cover no-repeat;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -107,7 +128,7 @@
             padding: 5rem 2rem;
             max-width: 1100px;
             margin: 0 auto;
-            scroll-margin-top: 70px; /* Compensación por el navbar fijo */
+            scroll-margin-top: 70px;
         }
 
         .section-title {
@@ -139,7 +160,7 @@
             background: #fff;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-top: 4px solid var(--primary);
             transition: transform 0.3s ease;
         }
@@ -176,7 +197,7 @@
             margin-top: 3rem;
         }
 
-        /* Responsividad Móvil */
+        /* --- Responsividad Móvil --- */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -195,101 +216,224 @@
         }
     </style>
 </head>
+
 <body>
 
-<!-- MENÚ PRINCIPAL (NAVBAR) -->
-<nav class="navbar">
-    <div class="brand">Roller<span>Speed</span></div>
-    <ul class="nav-links">
-        <li><a href="#mision">Misión</a></li>
-        <li><a href="#vision">Visión</a></li>
-        <li><a href="#valores">Valores</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#eventos">Eventos</a></li>
-    </ul>
-</nav>
+    <!-- MENÚ PRINCIPAL (NAVBAR) -->
+    <nav class="navbar">
 
-<!-- HEADER DE BIENVENIDA -->
-<header class="hero">
-    <h1>Escuela de Patinaje RollerSpeed</h1>
-    <p>Pasión, velocidad y técnica sobre ruedas</p>
-</header>
+        <div class="brand">
+            Roller<span>Speed</span>
+            <img src="/patineta.png" alt="RollerSpeed" class="brand-icon">
+        </div>
 
-<!-- SECCIÓN: MISIÓN -->
-<section id="mision">
-    <h2 class="section-title">Nuestra Misión</h2>
-    <div class="card">
-        <p>Formar patinadores integrales de todos los niveles y edades, fomentando la disciplina, la técnica deportiva y la actividad física mediante programas de entrenamiento de alta calidad en un ambiente seguro y motivador.</p>
-    </div>
-</section>
-
-<!-- SECCIÓN: VISIÓN -->
-<section id="vision">
-    <h2 class="section-title">Nuestra Visión</h2>
-    <div class="card">
-        <p>Ser reconocidos para el año 2030 como la escuela de patinaje líder a nivel regional y nacional, destacándonos por la excelencia de nuestros deportistas, la calidad de nuestros instructores y la formación de talentos de alto rendimiento.</p>
-    </div>
-</section>
-
-<!-- SECCIÓN: VALORES -->
-<section id="valores">
-    <h2 class="section-title">Nuestros Valores</h2>
-    <div class="card">
-        <ul class="values-list">
-            <li><strong>Disciplina:</strong> Compromiso constante con el entrenamiento y la superación personal.</li>
-            <li><strong>Trabajo en Equipo:</strong> Fomentamos el compañerismo y el apoyo mutuo dentro y fuera de la pista.</li>
-            <li><strong>Pasión:</strong> Amor por el deporte y el patinaje como estilo de vida.</li>
-            <li><strong>Respeto:</strong> Valoración entre atletas, entrenadores, rivales y jueces.</li>
-            <li><strong>Superación:</strong> Buscar siempre dar la mejor versión de uno mismo en cada carrera.</li>
+        <ul class="nav-links">
+            <li><a href="#mision">Misión</a></li>
+            <li><a href="#vision">Visión</a></li>
+            <li><a href="#valores">Valores</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#eventos">Eventos</a></li>
         </ul>
-    </div>
-</section>
 
-<!-- SECCIÓN: SERVICIOS -->
-<section id="servicios">
-    <h2 class="section-title">Nuestros Servicios</h2>
-    <div class="grid-cards">
-        <div class="card">
-            <h3>Patinaje Recreativo</h3>
-            <p>Clases de iniciación para niños y adultos que buscan aprender a patinar, mejorar su equilibrio y divertirse en un entorno controlado.</p>
-        </div>
-        <div class="card">
-            <h3>Patinaje de Velocidad</h3>
-            <p>Entrenamiento enfocado en técnica de empuje, postura, resistencia aeróbica y velocidad para competencias de carreras.</p>
-        </div>
-        <div class="card">
-            <h3>Clases Personalizadas</h3>
-            <p>Sesiones individuales con instructores calificados para perfeccionar maniobras avanzadas, frenados o preparación física específica.</p>
-        </div>
-    </div>
-</section>
+    </nav>
 
-<!-- SECCIÓN: EVENTOS DE LA ESCUELA -->
-<section id="eventos">
-    <h2 class="section-title">Eventos de la Escuela</h2>
-    <div class="grid-cards">
-        <div class="card">
-            <h3>Copa Interna RollerSpeed 2026</h3>
-            <p><strong>Fecha:</strong> 15 de Octubre</p>
-            <p>Competencia interna para todos los niveles donde nuestros alumnos ponen a prueba lo aprendido durante la temporada.</p>
-        </div>
-        <div class="card">
-            <h3>Ruta Nocturna de Integración</h3>
-            <p><strong>Fecha:</strong> Último Viernes del mes</p>
-            <p>Salida recreativa sobre ruedas por la ciudad acompañada por nuestros entrenadores y equipo de logística.</p>
-        </div>
-        <div class="card">
-            <h3>Workshop de Mantenimiento de Patines</h3>
-            <p><strong>Fecha:</strong> 5 de Noviembre</p>
-            <p>Taller práctico sobre limpieza de rodamientos, rotación de ruedas y ajuste general del equipo.</p>
-        </div>
-    </div>
-</section>
+    <!-- HEADER DE BIENVENIDA -->
+    <header class="hero">
 
-<!-- FOOTER -->
-<footer>
-    <p>&copy; 2026 RollerSpeed - Escuela de Patinaje. Todos los derechos reservados.</p>
-</footer>
+        <h1>Escuela de Patinaje RollerSpeed</h1>
+
+        <p>Pasión, velocidad y técnica sobre ruedas</p>
+
+    </header>
+
+    <!-- SECCIÓN: MISIÓN -->
+    <section id="mision">
+
+        <h2 class="section-title">Nuestra Misión</h2>
+
+        <div class="card">
+
+            <p>
+                Formar patinadores integrales de todos los niveles y edades,
+                fomentando la disciplina, la técnica deportiva y la actividad
+                física mediante programas de entrenamiento de alta calidad en
+                un ambiente seguro y motivador.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- SECCIÓN: VISIÓN -->
+    <section id="vision">
+
+        <h2 class="section-title">Nuestra Visión</h2>
+
+        <div class="card">
+
+            <p>
+                Ser reconocidos para el año 2030 como la escuela de patinaje
+                líder a nivel regional y nacional, destacándonos por la
+                excelencia de nuestros deportistas, la calidad de nuestros
+                instructores y la formación de talentos de alto rendimiento.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- SECCIÓN: VALORES -->
+    <section id="valores">
+
+        <h2 class="section-title">Nuestros Valores</h2>
+
+        <div class="card">
+
+            <ul class="values-list">
+
+                <li>
+                    <strong>Disciplina:</strong>
+                    Compromiso constante con el entrenamiento y la superación personal.
+                </li>
+
+                <li>
+                    <strong>Trabajo en Equipo:</strong>
+                    Fomentamos el compañerismo y el apoyo mutuo dentro y fuera de la pista.
+                </li>
+
+                <li>
+                    <strong>Pasión:</strong>
+                    Amor por el deporte y el patinaje como estilo de vida.
+                </li>
+
+                <li>
+                    <strong>Respeto:</strong>
+                    Valoración entre atletas, entrenadores, rivales y jueces.
+                </li>
+
+                <li>
+                    <strong>Superación:</strong>
+                    Buscar siempre dar la mejor versión de uno mismo en cada carrera.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- SECCIÓN: SERVICIOS -->
+    <section id="servicios">
+
+        <h2 class="section-title">Nuestros Servicios</h2>
+
+        <div class="grid-cards">
+
+            <div class="card">
+
+                <h3>Patinaje Recreativo</h3>
+
+                <p>
+                    Clases de iniciación para niños y adultos que buscan
+                    aprender a patinar, mejorar su equilibrio y divertirse
+                    en un entorno controlado.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Patinaje de Velocidad</h3>
+
+                <p>
+                    Entrenamiento enfocado en técnica de empuje, postura,
+                    resistencia aeróbica y velocidad para competencias de carreras.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Clases Personalizadas</h3>
+
+                <p>
+                    Sesiones individuales con instructores calificados para
+                    perfeccionar maniobras avanzadas, frenados o preparación
+                    física específica.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SECCIÓN: EVENTOS DE LA ESCUELA -->
+    <section id="eventos">
+
+        <h2 class="section-title">Eventos de la Escuela</h2>
+
+        <div class="grid-cards">
+
+            <div class="card">
+
+                <h3>Copa Interna RollerSpeed 2026</h3>
+
+                <p>
+                    <strong>Fecha:</strong> 15 de Octubre
+                </p>
+
+                <p>
+                    Competencia interna para todos los niveles donde nuestros
+                    alumnos ponen a prueba lo aprendido durante la temporada.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Ruta Nocturna de Integración</h3>
+
+                <p>
+                    <strong>Fecha:</strong> Último Viernes del mes
+                </p>
+
+                <p>
+                    Salida recreativa sobre ruedas por la ciudad acompañada
+                    por nuestros entrenadores y equipo de logística.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Workshop de Mantenimiento de Patines</h3>
+
+                <p>
+                    <strong>Fecha:</strong> 5 de Noviembre
+                </p>
+
+                <p>
+                    Taller práctico sobre limpieza de rodamientos, rotación
+                    de ruedas y ajuste general del equipo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 RollerSpeed - Escuela de Patinaje.
+            Todos los derechos reservados.
+        </p>
+
+    </footer>
 
 </body>
+
 </html>
