@@ -201,7 +201,7 @@ El uso de control de versiones permite al equipo:
 
 Proyecto desarrollado de manera colaborativa como parte de la asignatura Frameworks para MVC de IU Digital de Antioquia.
 
-### Integrantes
+### Integrantes - GRUPO 3
 
 - Carolina Álvarez
 - Santiago Monsalve
