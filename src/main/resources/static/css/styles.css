@@ -1,0 +1,218 @@
+/* ==========================================
+   ESTILOS GENERALES Y VARIABLES (RollerSpeed)
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #00bcd4;   /* Cyan velocidad */
+    --secondary-color: #ff4081; /* Neón energía */
+    --bg-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --text-gray: #b0b0b0;
+    --bg-light: #f8f9fa;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+}
+
+body {
+    line-height: 1.6;
+    background-color: var(--bg-light);
+}
+
+/* ==========================================
+   ESTILOS DE FRAGMENTOS (Nav, Header, Footer)
+   ========================================== */
+
+/* --- Navbar Fragment --- */
+.navbar-fragment {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 4px;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Header / Hero Fragment (Con Imagen de Fondo) --- */
+.header-fragment {
+    margin-top: 60px; /* Compensación por el navbar fijo */
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    padding: 2rem 1rem;
+
+    /* Configuración detallada de la imagen de fondo y superposición oscura */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('https://images.unsplash.com/photo-1547447134-cd3f5c716030?q=80&w=1200&auto=format&fit=crop');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-fragment h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.header-fragment p {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* --- Footer Fragment --- */
+.footer-fragment {
+    background-color: var(--bg-dark);
+    color: var(--text-gray);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--primary-color);
+}
+
+.footer-fragment strong {
+    color: var(--text-light);
+}
+
+/* ==========================================
+   ESTILOS DE VISTA PRINCIPAL (index.html)
+   ========================================== */
+
+section {
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    scroll-margin-top: 70px; /* Compensación por navbar fijo */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--bg-dark);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Grillas y Tarjetas */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    color: var(--bg-dark);
+}
+
+/* Lista de Valores */
+.values-list {
+    list-style: none;
+}
+
+.values-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.values-list strong {
+    color: var(--secondary-color);
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar-fragment {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .header-fragment h1 {
+        font-size: 2rem;
+    }
+}
