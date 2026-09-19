@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Aspirantes - Roller Speed</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; }
+        .container { max-width: 500px; background: #fff; margin: 30px auto; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; margin-bottom: 20px; }
+        .alert-success { background-color: #d4edda; color: #155724; padding: 10px; border-radius: 4px; margin-bottom: 15px; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        input[type="text"], input[type="email"], select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; margin-top: 10px; }
+        button:hover { background-color: #0056b3; }
+        .btn-home { display: block; text-align: center; margin-top: 15px; color: #666; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Inscripción de Aspirante</h2>
+
+        <!-- Mensaje dinámico de confirmación al guardar -->
+        <div th:if="${param.exito}" class="alert-success">
+            ¡Registro completado con éxito!
+        </div>
+
+        <!-- Formulario vinculado al objeto Aspirante del controlador -->
+        <form th:action="@{/registro/guardar}" th:object="${aspirante}" method="post">
+            
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" th:field="*{nombre}" placeholder="Ej. Carlos Pérez" required>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" th:field="*{correo}" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono de Contacto:</label>
+                <input type="text" id="telefono" th:field="*{telefono}" placeholder="Ej. 3001234567" required>
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Género:</label>
+                <select id="genero" th:field="*{genero}" required>
+                    <option value="" disabled selected>Seleccione...</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="medioPago">Método de Pago:</label>
+                <select id="medioPago" th:field="*{medioPago}" required>
+                    <option value="" disabled selected>Seleccione método...</option>
+                    <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                    <option value="Transferencia PSE">Transferencia PSE</option>
+                    <option value="Efectivo en Sede">Efectivo en Sede</option>
+                </select>
+            </div>
+
+            <button type="submit">Completar Registro</button>
+        </form>
+
+        <a th:href="@{/index}" class="btn-home">← Volver al Inicio</a>
+    </div>
+
+</body>
+</html>
