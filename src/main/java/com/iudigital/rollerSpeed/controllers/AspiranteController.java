@@ -19,13 +19,13 @@ public class AspiranteController {
     @GetMapping("/registro")
     public String mostrarFormulario(Model model) {
         model.addAttribute("aspirante", new Aspirante());
-        return "registro"; // Buscará la plantilla registro.html
+        return "registro"; 
     }
 
     // 2. Procesar y guardar el formulario enviado
     @PostMapping("/registro/guardar")
     public String guardarAspirante(@ModelAttribute("aspirante") Aspirante aspirante) {
-        aspiranteRepository.save(aspirante);
+        // aspiranteRepository.save(aspirante);
         return "redirect:/registro?exito";
     }
 }
