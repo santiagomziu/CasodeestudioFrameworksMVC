@@ -1,6 +1,6 @@
-package com.iudigital.rollerSpeed.model;
+package com.iudigital.rollerSpeed.models;
 
-import com.iudigital.rollerSpeed.model.enums.RolesList;
+import com.iudigital.rollerSpeed.models.enums.RolesList;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

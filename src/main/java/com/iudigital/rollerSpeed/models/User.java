@@ -1,4 +1,4 @@
-package com.iudigital.rollerSpeed.model;
+package com.iudigital.rollerSpeed.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -45,15 +45,20 @@ public class User {
     private LocalDateTime registerDate;
 
     @Column(name = "is_active")
-    private boolean isActive;
+    private boolean active;
 
     @ManyToMany(targetEntity = Role.class, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "roles_users",
+            joinColumns = @JoinColumn(name = "users_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
     private List<Role> roles;
 
     @PrePersist
     public void prePersist(){
         this.registerDate = LocalDateTime.now();
-        this.isActive = true;
+        this.active = true;
     }
 
 }

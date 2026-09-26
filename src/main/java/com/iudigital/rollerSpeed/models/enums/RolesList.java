@@ -1,4 +1,4 @@
-package com.iudigital.rollerSpeed.model.enums;
+package com.iudigital.rollerSpeed.models.enums;
 
 public enum RolesList {
     ADMINISTRATOR,
